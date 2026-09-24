@@ -22,6 +22,27 @@ class MejorityElement {
     }
 }
 
+class MejorityElement {
+    public static void main(String args[]) {
+        int arr[] = {2,2,1,1,1,2,2};
+        int count = 0;
+        int test = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (count == 0) {
+                test = arr[i];
+            }
+            if (arr[i]==test) {
+                count++;
+            } else {
+                count--;
+            }
+        }
+        System.out.print(test);
+    }
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------------
 //LeetCode
 class Solution {
     public int majorityElement(int[] nums) {
@@ -37,5 +58,23 @@ class Solution {
             }
         }   
         return -1;
+    }
+}
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        int test = 0;
+        for (int i = 0;i<nums.length;i++) {
+            if (count==0) {
+                test = nums[i];
+            }
+            if (nums[i] == test) {
+                count++;
+            } else {
+                count --;
+            }
+        }   
+        return test;
     }
 }
